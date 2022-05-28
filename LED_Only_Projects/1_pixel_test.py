@@ -8,7 +8,7 @@ from time import sleep
 
 mySense = SenseHat()
 mySense.low_light = True
-maxRange = 7
+maxRange = 6
 
 p1x = 0
 p1y = 0
@@ -70,7 +70,7 @@ def runner():
 			pixels += " P4(" + str(p4x) + "," + str(p4y) + ")"
 			pixels += "loopCount: " + str(loopCount) + " runway: " + str(runway)
 			print(pixels)
-			
+
 			sleep(1)
 
 	except KeyboardInterrupt:
