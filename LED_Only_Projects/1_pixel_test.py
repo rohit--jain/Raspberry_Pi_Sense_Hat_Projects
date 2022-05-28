@@ -21,7 +21,7 @@ p4y = maxRange
 runway = False
 
 def runner():
-	global p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y
+	global p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y, maxRange, runway
 	loopCount = 0
 	try:
 		while True:
