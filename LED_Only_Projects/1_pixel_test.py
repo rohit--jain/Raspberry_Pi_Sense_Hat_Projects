@@ -1,4 +1,6 @@
+from time import sleep
 from  sense_hat import SenseHat
+from time import sleep
 
 mySense = SenseHat()
 mySense.low_light = True
@@ -55,13 +57,15 @@ def runner():
 			mySense.set_pixel(p2x, p2y, 0, 255, 0)
 			mySense.set_pixel(p3x, p3y, 0, 0, 255)
 			mySense.set_pixel(p4x, p4y, 255, 0, 255)
+			sleep(1)
 
 	except KeyboardInterrupt:
 		mySense.clear()
-    	print('Execution Finished!')
-
+		print('Execution Finished!')
 
 def main():
 	mySense.show_message("X")
+	sleep(1)
+
 if __name__ == "__main__":main()
 	
