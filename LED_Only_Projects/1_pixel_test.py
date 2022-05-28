@@ -66,6 +66,7 @@ def runner():
 def main():
 	mySense.show_message("X")
 	sleep(1)
+	runner()
 
 if __name__ == "__main__":main()
 	
