@@ -34,7 +34,7 @@ def runner():
 			
 			# Mapping New Pixels
 			if runway == False:
-				if loopCount > maxRange:
+				if loopCount >= maxRange:
 					loopCount = 0
 					runway = True
 				p1x += 1
@@ -44,7 +44,7 @@ def runner():
 
 				loopCount += 1
 			else:
-				if loopCount > maxRange:
+				if loopCount >= maxRange:
 					loopCount = 0
 					runway = False
 				p1x -= 1
