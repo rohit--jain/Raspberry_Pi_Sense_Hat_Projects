@@ -8,7 +8,7 @@ from time import sleep
 
 mySense = SenseHat()
 mySense.low_light = True
-maxRange = 6
+maxRange = 7
 
 p1x = 0
 p1y = 0
@@ -38,19 +38,22 @@ def runner():
 			
 			# Mapping New Pixels
 			if runway == False:
+				loopCount += 1
 				if loopCount >= maxRange:
 					loopCount = 0
 					runway = True
+					continue
 				p1x += 1
 				p2y -= 1
 				p3y += 1
 				p4x -= 1
 
-				loopCount += 1
 			else:
+				loopCount += 1
 				if loopCount >= maxRange:
 					loopCount = 0
 					runway = False
+					continue
 				p1x -= 1
 				p2y += 1
 				p3y -= 1
