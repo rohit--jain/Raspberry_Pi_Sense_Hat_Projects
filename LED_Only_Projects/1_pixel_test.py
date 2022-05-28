@@ -1,4 +1,8 @@
-from time import sleep
+# Pixels Runner version 1.0
+# Author: Rohit Jain 
+# Email: rohit.jain.010@gmail.com
+# Programmed to run with Raspberry Pi Official Sense Hat
+
 from  sense_hat import SenseHat
 from time import sleep
 
@@ -54,10 +58,19 @@ def runner():
 				
 			
 			# Display New Pixels
-			mySense.set_pixel(p1x, p1y, 255, 0, 0)
+			mySense.set_pixel(p1x, p1y, 255, 0, 0)   
 			mySense.set_pixel(p2x, p2y, 0, 255, 0)
 			mySense.set_pixel(p3x, p3y, 0, 0, 255)
 			mySense.set_pixel(p4x, p4y, 255, 0, 255)
+
+			# Debug Info
+			pixels = "P1(" + str(p1x) + "," + str(p1y) + ")"
+			pixels += " P2(" + str(p2x) + "," + str(p2y) + ")"
+			pixels += " P3(" + str(p3x) + "," + str(p3y) + ")"
+			pixels += " P4(" + str(p4x) + "," + str(p4y) + ")"
+			pixels += "loopCount: " + str(loopCount) + " runway: " + str(runway)
+			print(pixels)
+			
 			sleep(1)
 
 	except KeyboardInterrupt:
