@@ -39,7 +39,7 @@ def blueLinner(xb, yb):
 
 	mySense.set_pixel(xb, yb, 0, 0, 255)
 	if yb!= minRange or yb != maxRange:
-		for x in range(minRange + 1, maxRange-1):
+		for x in range(maxRange-1 , minRange + 1):
 			mySense.set_pixel(x, yb, 0, 0, 255)
 
 def greenLinner(xg, yg):
@@ -53,7 +53,7 @@ def yellowLinner(xy, yy):
 
 	mySense.set_pixel(xy, yy, 255, 255, 0)
 	if xy != minRange or xy != maxRange :
-		for y in range(minRange + 1, maxRange-1):
+		for y in range(maxRange-1, minRange + 1):
 			mySense.set_pixel(xy, y, 255, 255, 0)
 
 
@@ -108,22 +108,20 @@ def runner():
 
 			mySense.set_pixel(p1x, p1y, 255, 0, 0)
 			mySense.set_pixel(p1x, p1y + 1, 255, 0, 0)
-#			redLinner(p1x, p1y)
+			redLinner(p1x, p1y)
 
 			mySense.set_pixel(p2x, p2y, 0, 255, 0)
 			mySense.set_pixel(p2x + 1, p2y, 0, 255, 0)
-#			greenLinner(p2x, p2y)
+			greenLinner(p2x, p2y)
 
 			mySense.set_pixel(p3x, p3y, 255, 255, 0)
 			mySense.set_pixel(p3x - 1, p3y, 255, 255, 0)
-#			yellowLinner(p3x, p3y)
+			yellowLinner(p3x, p3y)
 
 			mySense.set_pixel(p4x, p4y, 0, 0, 255)
 			mySense.set_pixel(p4x, p4y - 1, 0, 0, 255)
+			blueLinner(p4x, p4y)
 
-#			blueLinner(p4x, p4y)
-
-			
 			# Debug Info
 			pixels = "P1(" + str(p1x) + "," + str(p1y) + ")"
 			pixels += " P2(" + str(p2x) + "," + str(p2y) + ")"
