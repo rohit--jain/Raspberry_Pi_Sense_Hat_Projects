@@ -29,28 +29,28 @@ runway = False
 colorSeq = [ "red", "blue", "green", "yellow"]
 
 def redLinner(xr, yr):
-	global mySense
+
 	mySense.set_pixel(xr, yr, 255, 0, 0)
 	if xr != minRange or yr != maxRange:
 		for y in range(minRange + 1, maxRange):
 			mySense.set_pixel(xr, y, 255, 0, 0)
 
 def blueLinner(xb, yb):
-	global mySense
+
 	mySense.set_pixel(xb, yb, 0, 0, 255)
 	if yb!= minRange or yb != maxRange:
 		for x in range(minRange + 1, maxRange):
 			mySense.set_pixel(x, yb, 0, 0, 255)
 
 def greenLinner(xg, yg):
-	global mySense
+
 	mySense.set_pixel(xg, yg, 0, 255, 0)
 	if yg!= minRange or yg != maxRange :
 		for x in range(minRange + 1, maxRange):
 			mySense.set_pixel(x, yg, 0, 255, 0)
 
 def yellowLinner(xy, yy):
-	global mySense
+
 	mySense.set_pixel(xy, yy, 255, 255, 0)
 	if p4x != minRange or p4x != maxRange :
 		for y in range(minRange + 1, maxRange):
@@ -58,7 +58,7 @@ def yellowLinner(xy, yy):
 
 
 def runner():
-	global p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y, maxRange, runway, mySense, colorSeq
+	global p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y, maxRange, runway, colorSeq
 	loopCount = 0
 	try:
 		while True:
@@ -95,8 +95,16 @@ def runner():
 			
 			# Display New Pixels
 			 
-			
-			
+			random.shuffle(colorSeq)
+			for colorItem in colorSeq:
+				if colorItem == "red":
+					redLinner(p1x, p1y)
+				elif colorItem == "green":
+					greenLinner(p2x, p2y)
+				elif colorItem == "yellow":
+					yellowLinner(p3x, p3y)
+				else:
+					blueLinner(p4x, p4y)
 			
 			# Debug Info
 			pixels = "P1(" + str(p1x) + "," + str(p1y) + ")"
