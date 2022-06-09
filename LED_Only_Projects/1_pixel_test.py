@@ -95,16 +95,21 @@ def runner():
 			
 			# Display New Pixels
 			 
-			random.shuffle(colorSeq)
-			for colorItem in colorSeq:
-				if colorItem == "red":
-					redLinner(p1x, p1y)
-				elif colorItem == "green":
-					greenLinner(p2x, p2y)
-				elif colorItem == "yellow":
-					yellowLinner(p3x, p3y)
-				else:
-					blueLinner(p4x, p4y)
+#			random.shuffle(colorSeq)
+#			for colorItem in colorSeq:
+#				if colorItem == "red":
+#					redLinner(p1x, p1y)
+#				elif colorItem == "green":
+#					greenLinner(p2x, p2y)
+#				elif colorItem == "yellow":
+#					yellowLinner(p3x, p3y)
+#				else:
+#					blueLinner(p4x, p4y)
+
+			redLinner(p1x, p1y)
+			yellowLinner(p3x, p3y)
+			greenLinner(p2x, p2y)
+			blueLinner(p4x, p4y)
 			
 			# Debug Info
 			pixels = "P1(" + str(p1x) + "," + str(p1y) + ")"
