@@ -66,8 +66,17 @@ def runner():
 				for y in range(1,6):
 					mySense.set_pixel(p1x, y, 255, 0, 0) 
 			mySense.set_pixel(p2x, p2y, 0, 255, 0)
+			if p2y!= 0 or p2y != 7 :
+				for x in range (1,6):
+					mySense.set_pixel(p2x, p2y, 0, 255, 0)
 			mySense.set_pixel(p3x, p3y, 0, 0, 255)
+			if p3y!= 0 or p3y != 7 :
+				for x in range (1,6):
+					mySense.set_pixel(p3x, p3y, 0, 0, 255)
 			mySense.set_pixel(p4x, p4y, 255, 0, 255)
+			if p4x != 0 or p4x != 7 :
+				for y in range(1,6):
+					mySense.set_pixel(p4x, p4y, 255, 0, 255)
 
 			# Debug Info
 			pixels = "P1(" + str(p1x) + "," + str(p1y) + ")"
