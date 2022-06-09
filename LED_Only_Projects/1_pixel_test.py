@@ -62,9 +62,9 @@ def runner():
 			
 			# Display New Pixels
 			mySense.set_pixel(p1x, p1y, 255, 0, 0)
-			if p1x != 0 or p1x != 7 :
-				for y in range(1,6):
-					mySense.set_pixel(p1x, y, 255, 0, 0) 
+#			if p1x != 0 or p1x != 7 :
+#				for y in range(1,6):
+#					mySense.set_pixel(p1x, y, 255, 0, 0) 
 			mySense.set_pixel(p2x, p2y, 0, 255, 0)
 			if p2y!= 0 or p2y != 7 :
 				for x in range (1,6):
