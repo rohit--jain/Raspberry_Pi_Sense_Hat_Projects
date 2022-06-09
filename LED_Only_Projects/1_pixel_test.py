@@ -52,7 +52,7 @@ def greenLinner(xg, yg):
 def yellowLinner(xy, yy):
 
 	mySense.set_pixel(xy, yy, 255, 255, 0)
-	if p4x != minRange or p4x != maxRange :
+	if xy != minRange or xy != maxRange :
 		for y in range(minRange + 1, maxRange):
 			mySense.set_pixel(xy, y, 255, 255, 0)
 
