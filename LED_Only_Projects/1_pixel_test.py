@@ -115,11 +115,11 @@ def runner():
 #			greenLinner(p2x, p2y)
 
 			mySense.set_pixel(p3x, p3y, 255, 255, 0)
-			mySense.set_pixel(p3x + 1, p3y, 255, 255, 0)
+			mySense.set_pixel(p3x - 1, p3y, 255, 255, 0)
 #			yellowLinner(p3x, p3y)
 
 			mySense.set_pixel(p4x, p4y, 0, 0, 255)
-			mySense.set_pixel(p4x, p4y + 1, 0, 0, 255)
+			mySense.set_pixel(p4x, p4y - 1, 0, 0, 255)
 
 #			blueLinner(p4x, p4y)
 
