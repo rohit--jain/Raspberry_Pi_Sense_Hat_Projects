@@ -3,29 +3,62 @@
 # Email: rohit.jain.010@gmail.com
 # Programmed to run with Raspberry Pi Official Sense Hat
 
-from  sense_hat import SenseHat
+from sense_hat import SenseHat
 from time import sleep
+import random
 
 mySense = SenseHat()
 mySense.low_light = True
 maxRange = 7
+minRange = 0
 
-p1x = 0
-p1y = 0
+p1x = minRange
+p1y = minRange
 
-p2x = 0
+p2x = minRange
 p2y = maxRange
 
 p3x = maxRange
-p3y = 0
+p3y = minRange
 
 p4x = maxRange
 p4y = maxRange
 
 runway = False
 
+colorSeq = [ "red", "blue", "green", "yellow"]
+
+def redLinner(xr, yr):
+	global mySense
+	mySense.set_pixel(xr, yr, 255, 0, 0)
+	if xr != minRange or yr != maxRange:
+		for y in range(minRange + 1, maxRange):
+			mySense.set_pixel(xr, y, 255, 0, 0)
+
+def blueLinner(xb, yb):
+	global mySense
+	mySense.set_pixel(xb, yb, 0, 0, 255)
+	if yb!= minRange or yb != maxRange:
+		for x in range(minRange + 1, maxRange):
+			mySense.set_pixel(x, yb, 0, 0, 255)
+
+def greenLinner(xg, yg):
+	global mySense
+	mySense.set_pixel(xg, yg, 0, 255, 0)
+	if yg!= minRange or yg != maxRange :
+		for x in range(minRange + 1, maxRange):
+			mySense.set_pixel(x, yg, 0, 255, 0)
+
+def yellowLinner(xy, yy):
+	global mySense
+	mySense.set_pixel(xy, yy, 255, 255, 0)
+	if p4x != minRange or p4x != maxRange :
+		for y in range(minRange + 1, maxRange):
+			mySense.set_pixel(xy, y, 255, 255, 0)
+
+
 def runner():
-	global p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y, maxRange, runway
+	global p1x, p1y, p2x, p2y, p3x, p3y, p4x, p4y, maxRange, runway, mySense, colorSeq
 	loopCount = 0
 	try:
 		while True:
@@ -61,23 +94,10 @@ def runner():
 				
 			
 			# Display New Pixels
-			mySense.set_pixel(p1x, p1y, 255, 0, 0)
-			if p1x != 0 or p1x != 7 :
-				for y in range(1,7):
-					mySense.set_pixel(p1x, y, 255, 0, 0) 
-			mySense.set_pixel(p2x, p2y, 0, 255, 0)
-			if p2y!= 0 or p2y != 7 :
-				for x in range(1,7):
-					mySense.set_pixel(x, p2y, 0, 255, 0)
-			mySense.set_pixel(p3x, p3y, 0, 0, 255)
-			if p3y!= 0 or p3y != 7 :
-				for x in range(1,7):
-					mySense.set_pixel(x, p3y, 0, 0, 255)
-			mySense.set_pixel(p4x, p4y, 255, 0, 255)
-			if p4x != 0 or p4x != 7 :
-				for y in range(1,7):
-					mySense.set_pixel(p4x, y, 255, 0, 255)
-
+			 
+			
+			
+			
 			# Debug Info
 			pixels = "P1(" + str(p1x) + "," + str(p1y) + ")"
 			pixels += " P2(" + str(p2x) + "," + str(p2y) + ")"
